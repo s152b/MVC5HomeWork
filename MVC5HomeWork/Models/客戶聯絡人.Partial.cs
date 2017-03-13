@@ -3,7 +3,8 @@ namespace MVC5HomeWork.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+    using Validations;
+
     [MetadataType(typeof(客戶聯絡人MetaData))]
     public partial class 客戶聯絡人
     {
@@ -30,6 +31,8 @@ namespace MVC5HomeWork.Models
         public string Email { get; set; }
         
         [StringLength(50, ErrorMessage="欄位長度不得大於 50 個字元")]
+        [手機格式驗證Attribute]
+        [Phone]
         public string 手機 { get; set; }
         
         [StringLength(50, ErrorMessage="欄位長度不得大於 50 個字元")]
