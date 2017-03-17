@@ -19,7 +19,7 @@ namespace MVC5HomeWork.Controllers
         // GET: 客戶銀行資訊
         public ActionResult Index()
         {
-            var 客戶銀行資訊 = repo客戶銀行資訊.All().Include(客 => 客.Id);
+            var 客戶銀行資訊 = repo客戶銀行資訊.All();
             return View(客戶銀行資訊.ToList());
         }
 

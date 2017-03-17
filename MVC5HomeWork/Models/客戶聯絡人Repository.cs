@@ -1,11 +1,12 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-	
+using System.ComponentModel.DataAnnotations;
+
 namespace MVC5HomeWork.Models
 {   
 	public  class 客戶聯絡人Repository : EFRepository<客戶聯絡人>, I客戶聯絡人Repository
-	{
+    {
         public 客戶聯絡人 Find(int id)
         {
             return this.All().FirstOrDefault(c => c.Id == id);
@@ -33,6 +34,7 @@ namespace MVC5HomeWork.Models
             //this.UnitOfWork.Context.Configuration.ValidateOnSaveEnabled = false;
             entity.是否已刪除 = true;
         }
+        
     }
 
 	public  interface I客戶聯絡人Repository : IRepository<客戶聯絡人>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVC5HomeWork.Models.v客戶資料>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>v客戶名稱 清單頁面</h2>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.客戶名稱)</th>
+    
+        <th>@Html.DisplayNameFor(model => model.客戶聯絡人cnt)</th>
+  
+        <th>@Html.DisplayNameFor(model => model.客戶銀行資訊cnt)</th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.客戶名稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.客戶聯絡人cnt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.客戶銀行資訊cnt)
+        </td>
+    </tr>
+}
+
+</table>

@@ -21,19 +21,7 @@ namespace MVC5HomeWork.Models
 			return repository;
 		}		
 
-		public static v客戶資料Repository Getv客戶資料Repository()
-		{
-			var repository = new v客戶資料Repository();
-			repository.UnitOfWork = GetUnitOfWork();
-			return repository;
-		}
-
-		public static v客戶資料Repository Getv客戶資料Repository(IUnitOfWork unitOfWork)
-		{
-			var repository = new v客戶資料Repository();
-			repository.UnitOfWork = unitOfWork;
-			return repository;
-		}		
+		
 
 		public static 客戶資料Repository Get客戶資料Repository()
 		{
