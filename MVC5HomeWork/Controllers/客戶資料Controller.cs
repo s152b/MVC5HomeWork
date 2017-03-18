@@ -10,6 +10,7 @@ using MVC5HomeWork.Models;
 
 namespace MVC5HomeWork.Controllers
 {
+    [Authorize]
     public class 客戶資料Controller : Controller
     {
         客戶資料Repository repo客戶資料 = RepositoryHelper.Get客戶資料Repository();
@@ -17,9 +18,14 @@ namespace MVC5HomeWork.Controllers
         客戶聯絡人Repository repo客戶聯絡人 = RepositoryHelper.Get客戶聯絡人Repository();
 
         // GET: 客戶資料
-        public ActionResult Index()
+        public ActionResult Index(string keyword)
         {
-            return View(repo客戶資料.All().AsQueryable());
+            var data = repo客戶資料.All().AsQueryable();
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                data = data.Where(c => c.客戶名稱.Contains(keyword));
+            }
+            return View(data.ToList());
         }
 
         // GET: 客戶資料/Details/5
